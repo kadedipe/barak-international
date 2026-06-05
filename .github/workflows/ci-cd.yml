@@ -1,6 +1,6 @@
 # ============================================
-# BARAK INTERNATIONAL - NETLIFY CLI WORKFLOW
-# Most reliable - uses official Netlify CLI
+# BARAK INTERNATIONAL - SIMPLE WORKFLOW
+# With netlify.toml in repository
 # ============================================
 
 name: Deploy to Netlify
@@ -32,6 +32,7 @@ jobs:
         run: |
           netlify deploy \
             --dir=. \
-            --site=${{ secrets.NETLIFY_SITE_ID }} \
-            --auth=${{ secrets.NETLIFY_AUTH_TOKEN }} \
             --prod
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
