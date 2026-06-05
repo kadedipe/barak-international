@@ -394,12 +394,17 @@ window.onclick = function(event) {
     }
 }
 
-// Initialize documents page if on documents page
-if (currentPage === 'documents.html' || document.getElementById('documentsBody')) {
-    document.addEventListener('DOMContentLoaded', function() {
+// ============================================
+// DOCUMENTS PAGE INITIALIZATION - UPDATED
+// ============================================
+
+// Make sure renderDocuments is called when page loads
+document.addEventListener('DOMContentLoaded', function() {
+    if (document.getElementById('documentsBody')) {
+        console.log('Documents page detected. Loading documents...');
         loadDocuments();
-    });
-}
+    }
+});
 
 /* ============================================
    HOMEPAGE - SMOOTH SCROLLING
