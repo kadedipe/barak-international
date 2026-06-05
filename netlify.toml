@@ -1,0 +1,96 @@
+# ============================================
+# NETLIFY CONFIGURATION FOR BARAK INTERNATIONAL
+# ============================================
+
+[build]
+  # Publish directory - where your built files are
+  publish = "."
+
+# ============================================
+# REDIRECTS AND REWRITES
+# ============================================
+
+# Handle SPA routing - serve index.html for all routes
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# Redirect www to non-www (optional)
+[[redirects]]
+  from = "https://www.*.netlify.app/*"
+  to = "https://$1.netlify.app/$2"
+  status = 301
+
+# ============================================
+# HEADERS FOR SECURITY AND CACHING
+# ============================================
+
+# Security headers for all pages
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Content-Security-Policy = "default-src 'self' https:; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https:; img-src 'self' data: https:;"
+
+# Cache static images (1 year)
+[[headers]]
+  for = "/images/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Cache CSS and JS files (1 week)
+[[headers]]
+  for = "/*.css"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
+
+[[headers]]
+  for = "/*.js"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
+
+# Documents - force download
+[[headers]]
+  for = "/documents/*"
+  [headers.values]
+    Content-Disposition = "attachment"
+    Cache-Control = "public, max-age=86400"
+
+# ============================================
+# BASIC AUTH (Optional - for staging/preview)
+# ============================================
+
+# Uncomment to add password protection to preview deploys
+# [context.deploy-preview]
+#   [context.deploy-preview.basic_auth]
+#     username = "barak"
+#     password = "your-secure-password"
+
+# ============================================
+# FORMS (Netlify Forms integration)
+# ============================================
+
+[build.processing]
+  skip_processing = false
+
+[build.processing.css]
+  bundle = false
+  minify = true
+
+[build.processing.js]
+  bundle = false
+  minify = true
+
+[build.processing.images]
+  compress = true
+
+# ============================================
+# FUNCTIONS (Optional - for serverless functions)
+# ============================================
+
+# [functions]
+#   directory = "netlify/functions"
