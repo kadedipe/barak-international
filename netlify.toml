@@ -5,7 +5,7 @@
 [build]
   publish = "."
 
-# Force all HTML files to be displayed in browser
+# Custom headers to fix HTML display issues
 [[headers]]
   for = "/*.html"
   [headers.values]

@@ -1,0 +1,14 @@
+# Force HTML files to display in browser
+/*.html
+  Content-Type: text/html
+  X-Content-Type-Options: nosniff
+  Content-Disposition: inline
+
+# Specific rule for documents.html
+/documents.html
+  Content-Type: text/html
+  Content-Disposition: inline
+
+# All other files
+/*
+  X-Content-Type-Options: nosniff
