@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products | Kyoor & Zetta Wellness | Barak International</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">BARAK <span>INTERNATIONAL</span></div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="documents.html">Documents</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="page-header">
+            <h1>Our Products</h1>
+            <p>Premium Health & Wellness Solutions</p>
+        </div>
+
+        <div class="tabs">
+            <button class="tab-btn active" onclick="showTab('kyoor')">🌿 Kyoor</button>
+            <button class="tab-btn" onclick="showTab('zetta')">🔥 Zetta Wellness Device</button>
+            <button class="tab-btn" onclick="showTab('zarrcof')">🍯 Zarrcof</button>
+        </div>
+
+        <!-- Kyoor Tab -->
+        <div id="kyoor" class="tab-content active">
+            <div class="product-grid">
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/Kyoor.jfif" alt="Kyoor Nutritional Supplement" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div class="product-info">
+                        <h2>Kyoor Nutritional Supplement</h2>
+                        <div class="product-price">$1,200.00</div>
+                        <div class="product-description">
+                            A powerful Ayurvedic formulation backed by 2000+ years of traditional medicine and 200+ scientific studies.
+                        </div>
+                        <ul class="benefits-list">
+                            <li>Reduces stress and anxiety</li>
+                            <li>Boosts immune system</li>
+                            <li>Improves memory and cognitive function</li>
+                            <li>Anti-inflammatory properties</li>
+                            <li>Stabilizes blood sugar</li>
+                            <li>Promotes new nerve cell growth</li>
+                        </ul>
+                        <button class="btn-order" onclick="orderProduct('Kyoor')">Order Now</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/Catalogue.jpg" alt="Kyoor Ingredients" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div class="product-info">
+                        <h2>Key Ingredients</h2>
+                        <ul class="benefits-list">
+                            <li><strong>Ashwagandha</strong> - The King, Body Strengthener</li>
+                            <li><strong>Black Seed</strong> - Anti-inflammatory, Helps nutrient absorption</li>
+                            <li><strong>Honey</strong> - Complete nutrition, Energy source</li>
+                            <li><strong>Citrus (Lemon & Orange)</strong> - Vitamin C, Digestion</li>
+                            <li><strong>Mango & Pineapple</strong> - Digestive enzymes</li>
+                            <li><strong>Iron</strong> - Improves circulation</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ingredients-section">
+                <h2 style="color:#1a1a2e;">The Science of Colors in Kyoor</h2>
+                <div class="ingredients-grid">
+                    <div class="ingredient-item" style="background:#ffebee;"><h4>🔴 Red</h4><small>Heart & Immune System</small></div>
+                    <div class="ingredient-item" style="background:#fff3e0;"><h4>🟠 Orange</h4><small>Eye & Skin Health</small></div>
+                    <div class="ingredient-item" style="background:#fffde7;"><h4>🟡 Yellow</h4><small>Immune System</small></div>
+                    <div class="ingredient-item" style="background:#e8f5e9;"><h4>🟢 Green</h4><small>Alkalizing the Body</small></div>
+                    <div class="ingredient-item" style="background:#e3f2fd;"><h4>🔵 Blue/Purple</h4><small>Heart & Brain</small></div>
+                    <div class="ingredient-item"><h4>⚪ White</h4><small>Blood Pressure</small></div>
+                    <div class="ingredient-item"><h4>⚫ Black</h4><small>Anti-inflammatory</small></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Zetta Tab -->
+        <div id="zetta" class="tab-content">
+            <div class="product-grid">
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/Zetta-1.jpg" alt="Zetta Wellness Device" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div class="product-info">
+                        <h2>Zetta Wellness Device (Sauna)</h2>
+                        <div class="product-price">$1,200.00</div>
+                        <div class="product-description">
+                            Therapeutic modern technology for detoxification, relaxation, and overall wellness.
+                        </div>
+                        <ul class="benefits-list">
+                            <li>Deep detoxification through sweating</li>
+                            <li>Improved blood circulation</li>
+                            <li>Stress relief and relaxation</li>
+                            <li>Muscle recovery after exercise</li>
+                            <li>Skin purification</li>
+                            <li>Boosted immune system</li>
+                        </ul>
+                        <button class="btn-order" onclick="orderProduct('Zetta Wellness Device')">Inquire for Pricing</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/Zetta-2.jpg" alt="Zetta Wellness Benefits" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div class="product-info">
+                        <h2>Benefits of Regular Use</h2>
+                        <ul class="benefits-list">
+                            <li>Eliminates toxins from the body</li>
+                            <li>Reduces chronic fatigue</li>
+                            <li>Improves sleep quality</li>
+                            <li>Supports weight loss efforts</li>
+                            <li>Enhances cardiovascular health</li>
+                            <li>Promotes mental clarity</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Zarrcof Tab -->
+        <div id="zarrcof" class="tab-content">
+            <div class="product-grid">
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/Zarrcoff.jpg" alt="Zarrcof Supplement" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div class="product-info">
+                        <h2>Zarrcof</h2>
+                        <div class="product-price">$1,200.00</div>
+                        <div class="product-description">
+                            A soothing nutritional supplement for respiratory health and overall wellness.
+                        </div>
+                        <ul class="benefits-list">
+                            <li>Supports respiratory health</li>
+                            <li>Natural soothing properties</li>
+                            <li>Boosts immune defense</li>
+                            <li>Made with natural ingredients</li>
+                        </ul>
+                        <button class="btn-order" onclick="orderProduct('Zarrcof')">Order Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="footer">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Barak International</h4>
+                    <p>Connecting Pieces of Your Dream Together.</p>
+                    <p style="font-size: 12px; margin-top: 10px;">
+                        <strong>🇺🇬 Uganda:</strong> Suite 2, Floor 6, Thobani Center, Kampala<br>
+                        <strong>🇺🇸 USA:</strong> 1655 Fort Myer Drive, Suite 703, Arlington, VA<br>
+                        <strong>🇳🇬 Nigeria:</strong> Suite 10 Bataiya's Plaza, Area 11 Garki Abuja
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About</a>
+                    <a href="services.html">Services</a>
+                    <a href="products.html">Products</a>
+                    <a href="documents.html">Documents</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <a href="tel:+256702663294">⚖️ Legal: +256702663294</a>
+                    <a href="tel:+256745111659">🌿 Health: +256745111659</a>
+                    <a href="tel:+256760451604">💰 Wealth: +256760451604</a>
+                    <a href="tel:+17187178771">🇺🇸 US: +1 (718) 717-8771</a>
+                    <a href="mailto:adedipebabatundekolapo@gmail.com">📧 Email Us</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Barak International. All rights reserved.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

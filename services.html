@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services | Barak International</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">BARAK <span>INTERNATIONAL</span></div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="documents.html">Documents</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="page-header">
+            <h1>Our Services</h1>
+            <p>Comprehensive solutions across Legal, Health, Wealth, Technology, and Logistics</p>
+        </div>
+
+        <!-- Legal Section -->
+        <div class="service-section">
+            <div class="service-header" onclick="toggleSection('legal')">
+                <h2>⚖️ Legal & Incorporation Services</h2>
+                <span class="icon">▼</span>
+            </div>
+            <div id="legal" class="service-content">
+                <div class="service-grid">
+                    <div class="service-item">
+                        <h3>Company Registration</h3>
+                        <p>Ltd by shares and Ltd by guarantee incorporation.</p>
+                    </div>
+                    <div class="service-item">
+                        <h3>Memorandum & Articles</h3>
+                        <p>Drafting of MOA and AOA for all company types.</p>
+                    </div>
+                    <div class="service-item">
+                        <h3>NGO Registration</h3>
+                        <p>Full registration services for Non-Governmental Organizations.</p>
+                    </div>
+                    <div class="service-item">
+                        <h3>Legal Instruments</h3>
+                        <p>Power of Attorney, Agreements, Statutory Declarations, Deed Polls.</p>
+                    </div>
+                    <div class="service-item">
+                        <h3>Passports & Work Permits</h3>
+                        <p>Processing and expediting services available.</p>
+                    </div>
+                    <div class="service-item">
+                        <h3>Land Titles & Deeds</h3>
+                        <p>Processing, registration, and transfer of land titles.</p>
+                    </div>
+                </div>
+                <div class="price-note">Contact Legal Dept: +256702663294 for pricing</div>
+            </div>
+        </div>
+
+        <!-- Health & Wellness Section -->
+        <div class="service-section">
+            <div class="service-header" onclick="toggleSection('health')">
+                <h2>🌿 Health & Wellness Products</h2>
+                <span class="icon">▼</span>
+            </div>
+            <div id="health" class="service-content">
+                <div class="service-grid">
+                    <div class="product-card">
+                        <h3>Kyoor</h3>
+                        <p>Ayurvedic nutritional supplement with Ashwagandha, Black Seed, Honey, and 7 natural ingredients. Reduces stress, boosts immunity, improves cognitive function.</p>
+                        <small>✓ 2000 years of proven benefits</small>
+                    </div>
+                    <div class="product-card">
+                        <h3>Zarrcof</h3>
+                        <p>Nutritional health supplement for respiratory and overall wellness.</p>
+                    </div>
+                    <div class="product-card">
+                        <h3>Zetta Wellness Device</h3>
+                        <p>Therapeutic sauna technology for detoxification, relaxation, and recovery.</p>
+                    </div>
+                </div>
+                <div class="price-note">Contact Health & Wellness: +256745111659 for pricing</div>
+            </div>
+        </div>
+
+        <!-- Wealth Management Section -->
+        <div class="service-section">
+            <div class="service-header" onclick="toggleSection('wealth')">
+                <h2>💰 Wealth Management & Digital Finance</h2>
+                <span class="icon">▼</span>
+            </div>
+            <div id="wealth" class="service-content">
+                <h3>Zara Coin & Z Pay Ecosystem</h3>
+                <div class="service-grid">
+                    <div class="service-item">
+                        <h3>Zara Coin</h3>
+                        <p>Digital asset for investment and transactions.</p>
+                    </div>
+                    <div class="service-item">
+                        <h3>Z Pay Mastercard</h3>
+                        <p>Integrated payment gateway with physical card.</p>
+                    </div>
+                    <div class="service-item">
+                        <h3>Yield Program</h3>
+                        <p>Daily returns of 0.10% - 0.20% on locked deposits.</p>
+                    </div>
+                </div>
+                
+                <h3 style="margin-top: 20px;">Yield Program Example (0.12% daily for 150 days)</h3>
+                <table class="yield-table">
+                    <thead>
+                        <tr><th>Capital</th><th>Daily Dividend</th><th>150 Days Total</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>$100</td><td>$0.12</td><td>$18</td></tr>
+                        <tr><td>$500</td><td>$0.60</td><td>$90</td></tr>
+                        <tr><td>$1,000</td><td>$1.20</td><td>$180</td></tr>
+                        <tr><td>$5,000</td><td>$6.00</td><td>$900</td></tr>
+                        <tr><td>$10,000</td><td>$12.00</td><td>$1,800</td></tr>
+                    </tbody>
+                </table>
+                <div class="price-note">Contact Wealth Management: +256760451604 | 1 PX Wallet = $1 USD | 4,000 ZD = 1 PX Wallet</div>
+            </div>
+        </div>
+
+        <!-- IT & Technology Section -->
+        <div class="service-section">
+            <div class="service-header" onclick="toggleSection('it')">
+                <h2>💻 Information Technology & Security</h2>
+                <span class="icon">▼</span>
+            </div>
+            <div id="it" class="service-content">
+                <div class="service-grid">
+                    <div class="service-item">
+                        <h3>Software Development</h3>
+                        <p>Custom web and mobile applications.</p>
+                    </div>
+                    <div class="service-item">
+                        <h3>AI & Machine Learning</h3>
+                        <p>Intelligent automation and predictive analytics.</p>
+                    </div>
+                    <div class="service-item">
+                        <h3>Digital Marketing</h3>
+                        <p>SEO, social media, and online advertising.</p>
+                    </div>
+                    <div class="service-item">
+                        <h3>Cybersecurity</h3>
+                        <p>Network protection, threat detection, and compliance.</p>
+                    </div>
+                    <div class="service-item">
+                        <h3>Security Engineering</h3>
+                        <p>Advanced security infrastructure design.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Real Estate & Logistics Section -->
+        <div class="service-section">
+            <div class="service-header" onclick="toggleSection('realestate')">
+                <h2>🏠 Real Estate & Logistics</h2>
+                <span class="icon">▼</span>
+            </div>
+            <div id="realestate" class="service-content">
+                <div class="service-grid">
+                    <div class="service-item">
+                        <h3>Real Estate Dealership</h3>
+                        <p>Property sales and acquisitions.</p>
+                    </div>
+                    <div class="service-item">
+                        <h3>Property Management</h3>
+                        <p>Full-service property maintenance and leasing.</p>
+                    </div>
+                    <div class="service-item">
+                        <h3>Land Title Registration</h3>
+                        <p>Processing and transfer of land deeds.</p>
+                    </div>
+                    <div class="service-item">
+                        <h3>Courier & Logistics</h3>
+                        <p>Nationwide and international delivery of goods.</p>
+                    </div>
+                    <div class="service-item">
+                        <h3>Computer Supplies</h3>
+                        <p>Printers, computers, and accessories supply.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Empowerment Section -->
+        <div class="service-section">
+            <div class="service-header" onclick="toggleSection('empowerment')">
+                <h2>🎓 Empowerment & Financial Literacy</h2>
+                <span class="icon">▼</span>
+            </div>
+            <div id="empowerment" class="service-content">
+                <div class="service-grid">
+                    <div class="service-item">
+                        <h3>Financial Literacy Training</h3>
+                        <p>Workshops for adults of all ages and groups.</p>
+                    </div>
+                    <div class="service-item">
+                        <h3>Project SAWA</h3>
+                        <p>"Saving Afrika With Afrika" - Self-help sustainable development program for women, youth, and single mothers.</p>
+                    </div>
+                    <div class="service-item">
+                        <h3>Wealth Management Coaching</h3>
+                        <p>Personalized financial planning and investment guidance.</p>
+                    </div>
+                </div>
+                <div class="price-note">Contact Empowerment: +256760451604</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="footer">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Barak International</h4>
+                    <p>Connecting Pieces of Your Dream Together.</p>
+                    <p style="font-size: 12px; margin-top: 10px;">
+                        <strong>🇺🇬 Uganda:</strong> Suite 2, Floor 6, Thobani Center, Kampala<br>
+                        <strong>🇺🇸 USA:</strong> 1655 Fort Myer Drive, Suite 703, Arlington, VA<br>
+                        <strong>🇳🇬 Nigeria:</strong> Suite 10 Bataiya's Plaza, Area 11 Garki Abuja
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About</a>
+                    <a href="services.html">Services</a>
+                    <a href="products.html">Products</a>
+                    <a href="documents.html">Documents</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <a href="tel:+256702663294">⚖️ Legal: +256702663294</a>
+                    <a href="tel:+256745111659">🌿 Health: +256745111659</a>
+                    <a href="tel:+256760451604">💰 Wealth: +256760451604</a>
+                    <a href="tel:+17187178771">🇺🇸 US: +1 (718) 717-8771</a>
+                    <a href="mailto:adedipebabatundekolapo@gmail.com">📧 Email Us</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Barak International. All rights reserved.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Hub | Barak International</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">BARAK <span>INTERNATIONAL</span></div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="documents.html">Documents</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="page-header">
+            <h1>Document Hub</h1>
+            <p>Access legal forms, contracts, product guides, and important documents</p>
+        </div>
+
+        <!-- Admin Toggle -->
+        <div class="admin-toggle">
+            <span>🔐 <strong>Admin Portal</strong> (Upload new documents)</span>
+            <button onclick="toggleAdminPanel()">Admin Login / Upload</button>
+        </div>
+
+        <!-- Upload Form -->
+        <div id="uploadForm" class="upload-form">
+            <h3>📄 Upload New Document</h3>
+            <div class="form-row">
+                <label>Document Title *</label>
+                <input type="text" id="docTitle" placeholder="e.g., Memorandum of Association Template">
+            </div>
+            <div class="form-row">
+                <label>Category *</label>
+                <select id="docCategory">
+                    <option value="Legal">Legal & Incorporation</option>
+                    <option value="Health">Health & Wellness</option>
+                    <option value="Wealth">Wealth Management</option>
+                    <option value="IT">IT & Technology</option>
+                    <option value="General">General</option>
+                </select>
+            </div>
+            <div class="form-row">
+                <label>Description</label>
+                <textarea id="docDescription" rows="3" placeholder="Brief description of the document..."></textarea>
+            </div>
+            <div class="form-row">
+                <label>File (PDF, DOC, DOCX)</label>
+                <input type="file" id="docFile" accept=".pdf,.doc,.docx">
+            </div>
+            <button class="action-btn" style="padding: 10px 20px;" onclick="uploadDocument()">Upload Document</button>
+            <p style="font-size: 12px; margin-top: 10px; color: #666;">* Demo mode: Documents are stored in your browser. For permanent storage, backend integration required.</p>
+        </div>
+
+        <!-- Search Bar -->
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="Search by title or description..." onkeyup="filterDocuments()">
+            <select id="categoryFilter" onchange="filterDocuments()">
+                <option value="all">All Categories</option>
+                <option value="Legal">Legal & Incorporation</option>
+                <option value="Health">Health & Wellness</option>
+                <option value="Wealth">Wealth Management</option>
+                <option value="IT">IT & Technology</option>
+                <option value="General">General</option>
+            </select>
+        </div>
+
+        <!-- Documents Table -->
+        <div class="documents-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Category</th>
+                        <th>Date Uploaded</th>
+                        <th>Description</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="documentsBody">
+                    <!-- Documents will appear here -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Preview Modal -->
+    <div id="previewModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal()">&times;</span>
+            <h3 id="modalTitle">Document Preview</h3>
+            <div id="modalContent"></div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="footer">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Barak International</h4>
+                    <p>Connecting Pieces of Your Dream Together.</p>
+                    <p style="font-size: 12px; margin-top: 10px;">
+                        <strong>🇺🇬 Uganda:</strong> Suite 2, Floor 6, Thobani Center, Kampala<br>
+                        <strong>🇺🇸 USA:</strong> 1655 Fort Myer Drive, Suite 703, Arlington, VA<br>
+                        <strong>🇳🇬 Nigeria:</strong> Suite 10 Bataiya's Plaza, Area 11 Garki Abuja
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About</a>
+                    <a href="services.html">Services</a>
+                    <a href="products.html">Products</a>
+                    <a href="documents.html">Documents</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <a href="tel:+256702663294">⚖️ Legal: +256702663294</a>
+                    <a href="tel:+256745111659">🌿 Health: +256745111659</a>
+                    <a href="tel:+256760451604">💰 Wealth: +256760451604</a>
+                    <a href="tel:+17187178771">🇺🇸 US: +1 (718) 717-8771</a>
+                    <a href="mailto:adedipebabatundekolapo@gmail.com">📧 Email Us</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Barak International. All rights reserved.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
