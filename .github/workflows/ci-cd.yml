@@ -1,39 +1,123 @@
 # ============================================
-# BARAK INTERNATIONAL - DEPLOY WITH PEACEIRIS
-# Most popular GitHub Actions deployment
+# BARAK INTERNATIONAL - CI/CD WORKFLOW
+# GitHub Actions to Deploy to Netlify
 # ============================================
 
 name: Deploy to Netlify
 
+# Trigger the workflow on push to main branch
 on:
   push:
     branches:
       - main
+      - master
+  # Allow manual trigger from GitHub Actions tab
   workflow_dispatch:
 
+# Jobs to run
 jobs:
+  # Build and Deploy Job
   deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
+      # Step 1: Checkout the code from repository
+      - name: Checkout code
         uses: actions/checkout@v4
 
+      # Step 2: Display current directory structure (for debugging)
+      - name: List files
+        run: |
+          echo "Current directory contents:"
+          ls -la
+          echo ""
+          echo "HTML files found:"
+          ls -la *.html 2>/dev/null || echo "No HTML files in root"
+          echo ""
+          echo "CSS/JS files found:"
+          ls -la *.css *.js 2>/dev/null || echo "No CSS/JS files in root"
+
+      # Step 3: Create .netlify configuration file
+      - name: Create Netlify configuration
+        run: |
+          cat > netlify.toml << 'EOF'
+# ============================================
+# NETLIFY CONFIGURATION FOR BARAK INTERNATIONAL
+# ============================================
+
+[build]
+  publish = "."
+
+# Redirects for SPA
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# Security headers
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+# Cache static assets
+[[headers]]
+  for = "/images/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.css"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
+
+[[headers]]
+  for = "/*.js"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
+
+[[headers]]
+  for = "/documents/*"
+  [headers.values]
+    Content-Disposition = "attachment"
+    Cache-Control = "public, max-age=86400"
+EOF
+
+      # Step 4: Verify netlify.toml was created
+      - name: Verify netlify.toml
+        run: |
+          echo "netlify.toml created successfully:"
+          cat netlify.toml
+
+      # Step 5: Deploy to Netlify using peaceiris/actions-netlify@v3 (CORRECTED VERSION)
       - name: Deploy to Netlify
-        uses: peaceiris/actions-netlify@v2
+        uses: peaceiris/actions-netlify@v3
         with:
-          # Your Netlify Site ID
+          # Your Netlify Site ID (set in GitHub Secrets)
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
-          # Your Netlify Auth Token
+          # Your Netlify Auth Token (set in GitHub Secrets)
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-          # Directory to deploy
+          # Directory to publish
           publish_dir: .
-          # Production branch
+          # Production branch name
           production_branch: main
           # Enable pull request comments
           enable_pull_request_comment: true
+          # Enable commit comment
+          enable_commit_comment: true
           # Deployment message
           deploy_message: "Deploy from GitHub Actions - ${{ github.sha }}"
+          # Timeout in minutes
+          timeout_minutes: 10
         env:
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+
+      # Step 6: Output deployment URL
+      - name: Output deployment URL
+        run: |
+          echo "✅ Deployment complete!"
+          echo "🌐 Your site will be available at: https://your-site-name.netlify.app"
